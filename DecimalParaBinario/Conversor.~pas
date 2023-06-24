@@ -2,9 +2,27 @@ unit Conversor;
 
 interface
 
+uses
+  SysUtils;
+
 function ConverterParaBinario(decimal: Integer): string;
 
 implementation
+
+function AgruparBits(binario: string): string;
+var
+  agrupado: string;
+  i: Integer;
+begin
+  agrupado := '';
+  for i := Length(binario) downto 1 do
+  begin
+    agrupado := binario[i] + agrupado;
+    if (Length(agrupado) mod 4 = 0) and (i > 1) then
+      agrupado := ' ' + agrupado;
+  end;
+  Result := agrupado;
+end;
 
 function ConverterParaBinario(decimal: Integer): string;
 var
@@ -26,7 +44,7 @@ begin
     decimal := decimal div 2;
   end;
   
-  Result := binario;
+  Result := AgruparBits(binario);
 end;
 
 end.

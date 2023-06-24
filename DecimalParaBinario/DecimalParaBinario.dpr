@@ -9,6 +9,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'DecToBin';
   Application.CreateForm(TFormEntrada, FormEntrada);
   Application.Run;
 end.
