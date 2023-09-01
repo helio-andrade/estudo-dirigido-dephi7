@@ -54,6 +54,7 @@ end;
 procedure TFormEntrada.FormShow(Sender: TObject);
 begin
   EditNumero.SetFocus;
+
 end;
 
 procedure TFormEntrada.ButtonLimparClick(Sender: TObject);
